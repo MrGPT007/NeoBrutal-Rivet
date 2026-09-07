@@ -2,17 +2,18 @@
 
 > **NeoBrutal** is the family. **Rivet** is the system.
 
-A fluid neo-brutalist design system built for **humans and LLMs**. Rivet turns the hard-border, hard-shadow language of neo-brutalism into a reusable UI contract: semantic tokens, light + dark themes, purposeful motion, `clamp()`-driven sizing, 61 React primitives, and a machine-readable component registry.
+A fluid neo-brutalist design system built for **humans and LLMs**. Rivet turns the hard-border, hard-shadow language of neo-brutalism into a reusable UI contract: semantic tokens, light + dark themes, purposeful motion, `clamp()`-driven sizing, a 61-entry component contract registry, and reusable React source.
 
 **Designed for humans. Structured for machines.**
 
-[**Live demo →**](https://mrgpt007.github.io/NeoBrutal-Rivet/) · [Foundations](docs/FOUNDATIONS.md) · [LLM guide](docs/LLM-GUIDE.md) · [Component registry](registry/manifest.json)
+[**Showcase →**](https://mrgpt007.github.io/NeoBrutal-Rivet/) · [Foundations](docs/FOUNDATIONS.md) · [LLM guide](docs/LLM-GUIDE.md) · [Component registry](registry/manifest.json)
 
 ## Why Rivet exists
 
 Neo-brutalist interfaces are easy to imitate one screen at a time and surprisingly easy to make inconsistent across a real product. Rivet treats the style as a system instead of a screenshot.
 
-- **61 React UI primitives** with stable `data-slot` contracts.
+- **61 registered component contracts** with stable `data-slot` conventions.
+- **Reusable React primitives** being migrated and verified against that registry during the public alpha.
 - **Light, dark, and system themes** through semantic tokens.
 - **Fluid UI scale** using `clamp()` for typography, spacing, controls, icons, radii, page padding, and shadow offsets.
 - **Hard-shadow elevation** with physical hover and press behavior.
@@ -23,11 +24,13 @@ Neo-brutalist interfaces are easy to imitate one screen at a time and surprising
 
 ## Showcase
 
-The project site is deployed from `site/` through GitHub Pages and intentionally has no application build dependency.
+The project site lives in `site/` and is deployed through GitHub Pages with no application build dependency.
 
-**Demo:** https://mrgpt007.github.io/NeoBrutal-Rivet/
+**Planned Pages URL:** https://mrgpt007.github.io/NeoBrutal-Rivet/
 
-The showcase includes theme switching, an interactive accent playground, a searchable 61-component catalog, system principles, the LLM workflow, and an honest public roadmap.
+The showcase includes theme switching, an interactive accent playground, a searchable 61-contract catalog, system principles, the LLM workflow, and an honest public roadmap.
+
+> GitHub Pages must be enabled once for a new repository before the deployment workflow can publish. After that, changes under `site/` deploy automatically from `main`.
 
 ## Use in a Tailwind CSS v4 project
 
@@ -65,10 +68,10 @@ The registry exists so models **discover before they invent**. New UI should use
 ## Project structure
 
 ```text
-components/ui/       React primitives
+components/ui/       migrated React primitives
 components/          theme controls
 styles/              tokens, Tailwind mapping, motion, component skin, utilities
-registry/             machine-readable component inventory
+registry/             machine-readable 61-contract inventory
 docs/                 human + LLM guidance
 lib/                  shared utilities and theme runtime
 hooks/                shared React hooks
@@ -80,9 +83,11 @@ site/                 static GitHub Pages showcase
 
 **Public alpha · v0.1.0**
 
-The core system is product-independent and currently registers 61 primitives. The next work is deeper per-component documentation, state/variant matrices, accessibility verification, pattern recipes, visual-regression testing, and package distribution.
+The core system is product-independent and currently registers 61 component contracts. React source migration and verification are still being completed against that inventory. The next work is deeper per-component documentation, state/variant matrices, accessibility verification, pattern recipes, visual-regression testing, and package distribution.
 
-Rivet does not pretend unfinished infrastructure is finished: package publishing, a CLI installer, and framework adapters are roadmap items rather than current features.
+Rivet does not pretend unfinished infrastructure is finished: package publishing, a CLI installer, framework adapters, and full component verification are roadmap items rather than current features.
+
+See [`CHANGELOG.md`](CHANGELOG.md) for current progress.
 
 ## Validation
 
@@ -92,13 +97,13 @@ Run the source-level registry check:
 npm run validate
 ```
 
-It verifies the component inventory and core design-system invariants. Broader dependency-backed TypeScript/build and visual-regression testing are planned as the distribution layer matures.
+It verifies the registry and core design-system invariants. Broader dependency-backed TypeScript/build and visual-regression testing are planned as the distribution layer matures.
 
 ## Contributing
 
 Rivet is being developed in the open. Issues and pull requests are welcome for component fixes, accessibility improvements, documentation, token refinements, and reusable patterns that belong in the design system rather than a single product.
 
-Before adding a new primitive, check `registry/manifest.json` and reuse an existing component when possible.
+Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before adding a primitive. Check `registry/manifest.json` and reuse an existing contract when possible.
 
 ## Third-party code
 
