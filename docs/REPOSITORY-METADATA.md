@@ -4,7 +4,7 @@ Recommended GitHub **About** panel values for NeoBrutal Rivet.
 
 ## Description
 
-Fluid neo-brutalist design system for humans and LLMs — 61 React primitives, semantic themes, clamp() scaling, motion, and an agent-readable registry.
+Fluid neo-brutalist design system for humans and LLMs — semantic themes, clamp() scaling, motion, reusable React primitives, and a 61-contract agent-readable registry.
 
 ## Website
 
