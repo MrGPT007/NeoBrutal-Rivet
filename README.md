@@ -6,7 +6,7 @@ A fluid neo-brutalist design system built for **humans and LLMs**. Rivet turns t
 
 **Designed for humans. Structured for machines.**
 
-[**Showcase source →**](site/) · [Foundations](docs/FOUNDATIONS.md) · [LLM guide](docs/LLM-GUIDE.md) · [Component registry](registry/manifest.json)
+[**Live showcase →**](https://neobrutalrivet.github.io/) · [Foundations](docs/FOUNDATIONS.md) · [LLM guide](docs/LLM-GUIDE.md) · [Component registry](registry/manifest.json)
 
 ## Why Rivet exists
 
@@ -24,13 +24,13 @@ Neo-brutalist interfaces are easy to imitate one screen at a time and surprising
 
 ## Showcase
 
-The showcase source lives in `site/` and intentionally has no application build dependency.
+The public project showcase is live at:
 
-**Canonical public URL:** `https://neobrutalrivet.github.io/`
+**https://neobrutalrivet.github.io/**
 
-The public URL is **not live yet**. GitHub reserves a root `*.github.io` site for the user or organization that owns it, so the production site will be published from a GitHub organization named `NeoBrutalRivet` and a repository named `neobrutalrivet.github.io`.
+The website is published from the separate [`NeoBrutalRivet/neobrutalrivet.github.io`](https://github.com/NeoBrutalRivet/neobrutalrivet.github.io) repository so this repository can stay focused on the design-system source.
 
-The showcase includes theme switching, an interactive accent playground, a searchable 61-contract catalog, system principles, the LLM workflow, and an honest public roadmap.
+The showcase includes theme switching, an interactive accent playground, a searchable 61-contract catalog, system principles, the LLM workflow, responsive layouts, and the public roadmap.
 
 ## Use in a Tailwind CSS v4 project
 
@@ -75,16 +75,16 @@ registry/             machine-readable 61-contract inventory
 docs/                 human + LLM guidance
 lib/                  shared utilities and theme runtime
 hooks/                shared React hooks
-site/                 static showcase source
+site/                 showcase source snapshot
 ```
 
 ## Status
 
 **Public alpha · v0.1.0**
 
-The core system is product-independent and currently registers 61 component contracts. React source migration and verification are still being completed against that inventory. The next work is deeper per-component documentation, state/variant matrices, accessibility verification, pattern recipes, visual-regression testing, package distribution, and the canonical `neobrutalrivet.github.io` showcase.
+The core system is product-independent and currently registers 61 component contracts. React source migration and verification are still being completed against that inventory. The next work is deeper per-component documentation, state/variant matrices, accessibility verification, pattern recipes, visual-regression testing, and package distribution.
 
-Rivet does not pretend unfinished infrastructure is finished: package publishing, a CLI installer, framework adapters, full component verification, and the production showcase domain are roadmap items rather than current features.
+Rivet does not pretend unfinished infrastructure is finished: package publishing, a CLI installer, framework adapters, and full component verification are roadmap items rather than current features.
 
 See [`CHANGELOG.md`](CHANGELOG.md) for current progress.
 
