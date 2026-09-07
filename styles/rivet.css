@@ -1,0 +1,7 @@
+/* Import this after Tailwind CSS in a Tailwind v4 project. */
+@import "./primitives.css";
+@import "./tokens.css";
+@import "./tailwind.css";
+@import "./motion.css";
+@import "./components.css";
+@import "./utilities.css";
