@@ -1,27 +1,37 @@
 # NeoBrutal Rivet
 
-**Family:** NeoBrutal  
-**Name:** Rivet  
-**Identifier:** `neobrutal-rivet`
+> **NeoBrutal** is the family. **Rivet** is the system.
 
-A reusable, fluid neo-brutalist design system built for **humans and LLMs**. Rivet combines semantic tokens, hard-border/hard-shadow component styling, light + dark modes, purposeful motion, `clamp()`-driven fluid sizing, and a machine-readable component registry.
+A fluid neo-brutalist design system built for **humans and LLMs**. Rivet turns the hard-border, hard-shadow language of neo-brutalism into a reusable UI contract: semantic tokens, light + dark themes, purposeful motion, `clamp()`-driven sizing, 61 React primitives, and a machine-readable component registry.
 
-> Designed for humans. Structured for machines.
+**Designed for humans. Structured for machines.**
 
-## What is included
+[**Live demo →**](https://mrgpt007.github.io/NeoBrutal-Rivet/) · [Foundations](docs/FOUNDATIONS.md) · [LLM guide](docs/LLM-GUIDE.md) · [Component registry](registry/manifest.json)
+
+## Why Rivet exists
+
+Neo-brutalist interfaces are easy to imitate one screen at a time and surprisingly easy to make inconsistent across a real product. Rivet treats the style as a system instead of a screenshot.
 
 - **61 React UI primitives** with stable `data-slot` contracts.
-- **Light, dark, and system themes** using semantic tokens.
-- **Fluid UI scale** using `clamp()` for type, spacing, controls, icons, radii, page padding, and shadow offsets.
-- **NeoBrutal elevation** with crisp hard shadows and physical press states.
-- **Motion tokens** plus reduced-motion handling.
-- **Machine-readable registry** for LLM component discovery.
-- **Agent contract** (`AGENTS.md` + `docs/LLM-GUIDE.md`).
-- **Plain-language copy guide** for generated product UI.
+- **Light, dark, and system themes** through semantic tokens.
+- **Fluid UI scale** using `clamp()` for typography, spacing, controls, icons, radii, page padding, and shadow offsets.
+- **Hard-shadow elevation** with physical hover and press behavior.
+- **Motion tokens** with reduced-motion handling.
+- **Machine-readable registry** so coding agents discover components before inventing new ones.
+- **Agent instructions** in `AGENTS.md` and `docs/LLM-GUIDE.md`.
+- **Plain-language UI copy guidance** for generated product interfaces.
+
+## Showcase
+
+The project site is deployed from `site/` through GitHub Pages and intentionally has no application build dependency.
+
+**Demo:** https://mrgpt007.github.io/NeoBrutal-Rivet/
+
+The showcase includes theme switching, an interactive accent playground, a searchable 61-component catalog, system principles, the LLM workflow, and an honest public roadmap.
 
 ## Use in a Tailwind CSS v4 project
 
-Install the dependencies, copy or consume the source, then import Rivet after Tailwind:
+Import Rivet after Tailwind:
 
 ```css
 @import "tailwindcss";
@@ -29,7 +39,7 @@ Install the dependencies, copy or consume the source, then import Rivet after Ta
 @import "./styles/rivet.css";
 ```
 
-Wrap a React app when you want persisted light/dark/system switching:
+For persisted light/dark/system switching in React:
 
 ```tsx
 import { ThemeProvider } from "./lib/theme"
@@ -39,7 +49,7 @@ export function AppRoot({ children }: { children: React.ReactNode }) {
 }
 ```
 
-The CSS itself only requires the `.dark` class, so non-React projects can use the tokens and component skin without the React provider.
+The CSS only requires the `.dark` class, so non-React projects can use Rivet tokens and the component skin without the React provider.
 
 ## LLM usage
 
@@ -48,11 +58,11 @@ Give a coding model these files first:
 1. `AGENTS.md`
 2. `docs/LLM-GUIDE.md`
 3. `registry/manifest.json`
-4. Existing component source files it intends to compose
+4. The existing component source files it intends to compose
 
-The registry exists so models **discover before they invent**.
+The registry exists so models **discover before they invent**. New UI should use semantic tokens, existing primitives, the fluid scale, accessible interaction states, and the documented motion language.
 
-## Repository structure
+## Project structure
 
 ```text
 components/ui/       React primitives
@@ -62,10 +72,36 @@ registry/             machine-readable component inventory
 docs/                 human + LLM guidance
 lib/                  shared utilities and theme runtime
 hooks/                shared React hooks
+site/                 static GitHub Pages showcase
+.github/workflows/    automated showcase deployment
 ```
 
-## Current status
+## Status
 
-Rivet core is product-independent: product names, business logic, databases, media pipelines, and app-specific styling do not belong here.
+**Public alpha · v0.1.0**
 
-This is the starting point for continued work on component variants, patterns, themes, documentation, visual regression tests, and package distribution.
+The core system is product-independent and currently registers 61 primitives. The next work is deeper per-component documentation, state/variant matrices, accessibility verification, pattern recipes, visual-regression testing, and package distribution.
+
+Rivet does not pretend unfinished infrastructure is finished: package publishing, a CLI installer, and framework adapters are roadmap items rather than current features.
+
+## Validation
+
+Run the source-level registry check:
+
+```bash
+npm run validate
+```
+
+It verifies the component inventory and core design-system invariants. Broader dependency-backed TypeScript/build and visual-regression testing are planned as the distribution layer matures.
+
+## Contributing
+
+Rivet is being developed in the open. Issues and pull requests are welcome for component fixes, accessibility improvements, documentation, token refinements, and reusable patterns that belong in the design system rather than a single product.
+
+Before adding a new primitive, check `registry/manifest.json` and reuse an existing component when possible.
+
+## Third-party code
+
+Some primitives are based on patterns from the shadcn/ui ecosystem and use open-source dependencies including Radix UI, Base UI, Lucide, Sonner, Recharts, and others listed in `package.json`.
+
+See [`docs/THIRD-PARTY-NOTICES.md`](docs/THIRD-PARTY-NOTICES.md). Upstream license requirements should be preserved when redistributing third-party code.
