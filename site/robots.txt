@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mrgpt007.github.io/NeoBrutal-Rivet/sitemap.xml
